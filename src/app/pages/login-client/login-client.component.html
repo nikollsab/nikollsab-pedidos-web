@@ -1,7 +1,14 @@
 <div class="div-container">
+    <br>
+    <div class="material-icons">
+        local_shipping
+    </div>
     <form [formGroup]="signInForm">
         <mat-card>
             <h1 mat-card-title>Bienvenido</h1>
+            <h4>
+                Ingrese su núnero de orden
+            </h4>
             <mat-card-content>
                 <mat-form-field appearance="outline">
                     <mat-label>Numero de Orden de compra</mat-label>
@@ -9,7 +16,7 @@
                     <mat-error *ngIf="signInForm.get('username').hasError('required')">Este campo es obligatorio</mat-error>
                 </mat-form-field>
                 <br>
-                <button mat-raised-button color="primary" (click)="search()" >Buscar</button>
+                <button mat-raised-button color="warn" (click)="search()" >Buscar</button>
     
             </mat-card-content>
         </mat-card>

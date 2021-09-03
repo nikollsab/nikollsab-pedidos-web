@@ -1,21 +1,41 @@
-<mat-card>
+<div class="back-arrow">
+    
+    <button mat-button color="warn" routerLink="/login-cliente">
+        <span class="material-icons">
+            west
+        </span>
+        &nbsp;
+        Regresar</button>
+</div>
+
+<div *ngIf="mostrarError" class="error-text">
+    <div>
+        <span class="material-icons icono">
+            sentiment_very_dissatisfied
+        </span>
+    </div>
+    <h4> No se encontró la orden de compra que está buscando </h4>
+</div>
+
+<div *ngIf="isLoading" class="spinner">
+    <mat-spinner></mat-spinner>
+</div>
+
+<mat-card *ngIf="!isLoading && !mostrarError">
+    
+    <br>
+    <br>
     <h1 mat-card-title style="text-align: center;">Seguimiento de compra</h1>
     <mat-card-content>
         <mat-grid-list cols="2" rowHeight="50px" style="margin-bottom: 0em;">
             <mat-grid-tile>
                 <span>Orden de compra: 25125626</span>
             </mat-grid-tile>
-            <!--  <mat-grid-tile>
-                <span>25125626</span>
-            </mat-grid-tile> -->
         </mat-grid-list>
         <mat-grid-list cols="2" rowHeight="76px" style="margin-bottom: 0em;">
             <mat-grid-tile>
                 <span>Fecha de compra: 22 mayo 2020</span>
             </mat-grid-tile>
-            <!-- <mat-grid-tile>
-                <span></span>
-            </mat-grid-tile> -->
         </mat-grid-list>
         <mat-grid-list cols="1" rowHeight="76px">
             <mat-horizontal-stepper labelPosition="bottom" [linear]="true" [selectedIndex]="currentStepMat" #stepper>
