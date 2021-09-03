@@ -12,17 +12,27 @@ export class ShoppingCartComponent implements OnInit {
   carrito: Carrito[] = [];
   total: number = 0;
 
+  tieneProductos: boolean = false;
+
   constructor() {
      
   }
 
   ngOnInit(): void {
     this.carrito = JSON.parse(localStorage.getItem('carrito'));
-  
-    this.carrito.forEach(element => {
-      this.total += element.precio + element.cantidad;
-    });
-    console.log(this.carrito);
-  }
+
+    if(this.carrito == null) {
+      this.tieneProductos = false;
+    } else {
+      this.tieneProductos = true;
+
+      this.carrito.forEach(element => {
+        this.total += element.precio + element.cantidad;
+      });
+      console.log(this.carrito);
+    }
+    }
+   
+
 
 }

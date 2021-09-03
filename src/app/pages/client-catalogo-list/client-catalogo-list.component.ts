@@ -28,7 +28,7 @@ export class ClientCatalogoListComponent implements OnInit {
   agregarCarrito(element) {
     let noexiste = true;
     if (this.carrito.length > 0) {
-      console.log('if');
+      console.log('se agrego al carrito mas de uno');
       this.carrito.map(function (item) {
         if (item.productoId == element.productoId) {
           noexiste = false;
@@ -38,13 +38,13 @@ export class ClientCatalogoListComponent implements OnInit {
       });
     }
     else {
-      console.log('else');
+      console.log('se agrego al carrito uno');
       element.cantidad = 1;
       this.carrito.push(element);
       return true;
     }
     if (noexiste && this.carrito.length > 0) {
-      console.log('if 2');
+      console.log('se agregaron varios');
       element.cantidad = 1;
       this.carrito.push(element);
     }

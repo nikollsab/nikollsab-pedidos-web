@@ -1,18 +1,17 @@
-<mat-card >
+<div >
     <br>
-    <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title class="titulo"> Mapa del sistema </mat-card-title>
-    </mat-card-header>
+
+    <h1 class="titulo"> Mapa del sistema </h1>
+
     <br>
-    <mat-card-content class="flex-card">
+    <div class="flex-card">
 
         <mat-card>
             <div class="material-icons">
                 bookmarks
             </div>
             <p>
-                <button mat-raised-button color="primary" routerLink="/catalogo">Catalogo</button>
+                <button mat-raised-button color="warn" routerLink="/catalogo">Catalogo</button>
             </p>
 
         </mat-card>
@@ -24,7 +23,7 @@
             </div>
 
             <p>
-                <button mat-raised-button color="primary" routerLink="/login">Login Administrativo</button>
+                <button mat-raised-button color="warn" routerLink="/login">Login Administrativo</button>
             </p>
 
         </mat-card>
@@ -36,11 +35,12 @@
             </div>
 
             <p>
-                <button mat-raised-button color="primary" routerLink="/login-cliente">Seguimiento de pedidos</button>
+                <button mat-raised-button color="warn" routerLink="/login-cliente">Seguimiento de pedidos</button>
             </p>
 
         </mat-card>
 
-    </mat-card-content>
+    </div>
 
-</mat-card>
+    <br>
+</div>

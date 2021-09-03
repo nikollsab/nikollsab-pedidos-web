@@ -1,7 +1,7 @@
 <mat-drawer-container>
     <!--Header-->
     <mat-drawer-content>
-        <mat-toolbar class="mat-elevation-z8" color="success">
+        <mat-toolbar color="primary" class="toolbar-shop">
             <mat-toolbar-row>
 
                 <div class="div-flex">
@@ -14,7 +14,7 @@
                     </div>
 
                     <div>
-                        <span [matBadge]="cantidad" matBadgeOverlap="false" class="badge-icon"></span>
+                        <span [matBadge]="cantidad" matBadgeOverlap="false" class="badge-icon" matBadgeColor="warn"></span>
                         <button mat-icon-button routerLink="carrito" class="cart">
                             <mat-icon>shopping_cart</mat-icon>
                         </button>

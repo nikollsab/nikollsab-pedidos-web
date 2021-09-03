@@ -3,7 +3,7 @@ table {
     text-align: center;
 }
 
-mat-card {
+.card-table, mat-card {
     margin: 1%;
 }
 
@@ -35,4 +35,22 @@ mat-card {
 }
 h2 {
     font-weight: bold;
+}
+
+.no-products {
+
+    height: 85vh;
+    display: flex;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+
+
+.shop-icon {
+    font-size: 40px;
 }
