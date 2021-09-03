@@ -1,0 +1,13 @@
+
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+   
+    .alert-success { 
+        border-style: dotted;
+        border-color:#7ebb7a  ;
+    }
+  }

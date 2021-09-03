@@ -1,0 +1,41 @@
+:host{
+    font-family: 'Lato', sans-serif;
+}
+table {
+    width: 90%;
+    margin: 5%;
+    text-align: center;
+}
+
+td {
+    text-align: center;
+}
+
+
+#nombre-producto {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#precio-producto {
+    font-weight: bold;
+    font-size: 20px;
+    color: #e53935;
+}
+
+#esTecnicas-producto{
+    font-size: 16px;
+    color: #707070;
+}
+
+td.mat-cell {
+  margin: 40;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  text-align: left;
+  width: 40%;
+  padding: 10px;
+}
+th.mat-header-cell {
+text-align: center;
+}

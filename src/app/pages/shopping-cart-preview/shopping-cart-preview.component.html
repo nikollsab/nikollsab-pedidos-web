@@ -1,0 +1,53 @@
+<!--Tabla productos-->
+<mat-card-content>
+    <mat-divider></mat-divider>
+    <table mat-table class="carrito-preview">
+
+      <ng-container matColumnDef="imagen">
+        <th mat-header-cell *matHeaderCellDef>Imagen, nombre y borrar</th>
+        <tr>
+          <td mat-cell style="max-width: 100px;"   rowspan="3" id="imagen-producto"> Aqui va la imagen , soy el carrito.</td>
+          <td mat-row >Nombre</td>
+          <td mat-row rowspan="3"><button><mat-icon>delete</mat-icon></button></td>
+      </tr>
+      </ng-container>
+  
+      <ng-container matColumnDef="precio-unidad">
+        <th mat-header-cell *matHeaderCellDef> precio unidad</th>
+          <tr mat-cell mat-cell style="max-width: 200px; padding-left: 100px;"> 
+              <td mat-row>Precio unidad</td>
+          </tr>
+      </ng-container>
+
+      <ng-container matColumnDef="precio-total">
+        <th mat-header-cell *matHeaderCellDef>precio</th>
+          <tr mat-cell mat-cell style="max-width: 200px; padding-left: 100px;"> 
+              <td mat-row>Precio</td>
+          </tr>
+      </ng-container>
+  </table>
+  <tr mat-header-row *matHeaderRowDef="columndefs"></tr>
+  <tr mat-row *matRowDef="let row; columns: columndefs;"></tr>
+</mat-card-content>
+
+    <!--Precio total-->
+<table mat-table class="carrito-preview">
+      <ng-container matColumnDef="subtotal">
+        <th mat-header-cell *matHeaderCellDef>Subtotal y preciosubtotal</th>
+        <td>
+          <tr mat-cell style="max-width: 100px;" id="imagen-producto"> Subtotal</tr>
+          <tr mat-row>PrecioSubtotal</tr>
+      </td>
+      </ng-container>
+      <mat-divider></mat-divider>
+      <ng-container matColumnDef="total">
+        <th mat-header-cell *matHeaderCellDef>Total y precio Total</th>
+          <td mat-cell mat-cell style="max-width: 200px; padding-left: 100px;"> 
+              <tr mat-row>Total</tr>
+              <tr mat-row>PrecioTotal</tr>
+          </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="columndefs"></tr>
+      <tr mat-row *matRowDef="let row; columns: columndefs;"></tr>
+
+  </table>

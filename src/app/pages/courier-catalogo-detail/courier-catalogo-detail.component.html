@@ -1,0 +1,81 @@
+<div class="container">
+<table mat-table  [dataSource]="dataSource">
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="numPedido">
+    <th mat-header-cell *matHeaderCellDef> N° Pedido:</th>
+    <td mat-cell *matCellDef="let element"> {{element.pedidoId}} </td>
+
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="cliente">
+    <th mat-header-cell *matHeaderCellDef> Cliente</th>
+    <td mat-cell *matCellDef="let element"> {{element.cliente.nombre | uppercase }} {{element.cliente.apellido | uppercase }}  </td>
+  </ng-container>
+
+   <!-- Weight Column -->
+   <ng-container matColumnDef="celular">
+    <th mat-header-cell *matHeaderCellDef> N° Celular </th>
+    <td mat-cell *matCellDef="let element">  {{element.cliente.celular}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="dirección">
+    <th mat-header-cell *matHeaderCellDef>  Dirección </th>
+    <td mat-cell *matCellDef="let element">  {{element.cliente.direccion | uppercase }} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="correo">
+    <th mat-header-cell *matHeaderCellDef> Correo </th>
+    <td mat-cell *matCellDef="let element">{{element.cliente.correo | uppercase }}  </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="estado">
+    <th mat-header-cell *matHeaderCellDef> Estado </th>
+    <td mat-cell *matCellDef="let element">{{element.estado.nombre | uppercase }}  </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="defColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: defColumns;"></tr>
+</table>
+</div>
+
+
+<!--TABLA DE DETALLE DEL PEDIDO-->
+<div class="tabla">
+
+<table mat-table  class="mat-elevation-z8" [dataSource]="dataSourceDetail">
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="item">
+    <th mat-header-cell *matHeaderCellDef> item </th>
+    <td mat-cell *matCellDef="let element">  </td>
+
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="codProducto">
+    <th mat-header-cell *matHeaderCellDef> Código del Producto </th>
+    <td mat-cell *matCellDef="let element"> {{element.producto.productoId}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="nomProducto">
+    <th mat-header-cell *matHeaderCellDef> Nombre del Producto </th>
+    <td mat-cell *matCellDef="let element">  {{element.producto.nombre | uppercase }} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="cantidad">
+    <th mat-header-cell *matHeaderCellDef> Cantidad </th>
+    <td mat-cell *matCellDef="let element">{{element.cantidad}}  </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+</div>
+<button mat-raised-button color="primary">Entregado</button>

@@ -1,0 +1,25 @@
+<form [formGroup]="signInForm" (ngSubmit)="sendData()">
+    <mat-card>
+        <h1 mat-card-title>Bienvenido</h1>
+        <mat-card-content>
+            <mat-form-field appearance="outline">
+                <mat-label>Usuario:</mat-label>
+                <input matInput formControlName="username">
+                <mat-error *ngIf="signInForm.get('username').hasError('required')">Este campo es obligatorio</mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="outline">
+                <mat-label>Contraseña:</mat-label>
+                <input matInput formControlName="password" type="password">
+                <mat-error *ngIf="signInForm.get('password').hasError('required')">Este campo es obligatorio</mat-error>
+            </mat-form-field>
+            <br>
+            <button mat-raised-button color="primary">Ingresar</button>
+            <button mat-button color="warn" [routerLink]="['/registro']" routerLinkActive="activo">Registrarse</button>
+        </mat-card-content>
+        <!--    <mat-card-actions>
+            <button type="button" mat-button>Registrarse</button>
+            <button mat-button [disabled]="signInForm.invalid">Ingresar</button>
+        </mat-card-actions> -->
+    </mat-card>
+</form>

@@ -1,0 +1,30 @@
+table {
+    width: 90%;
+    text-align: center;
+}
+
+mat-card {
+    margin: 1%;
+}
+
+.total {
+    align-items: center;
+    width: 50%;
+}
+
+.div-total {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+}
+
+#continuar-compra,
+#regresar-compra {
+    text-align: center;
+    margin: 1%;
+}
+
+.container {
+    padding: 30px;
+}

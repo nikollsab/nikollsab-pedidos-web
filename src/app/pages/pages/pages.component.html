@@ -1,0 +1,22 @@
+<mat-drawer-container>
+    <!--Header-->
+    <mat-drawer-content>
+        <mat-toolbar class="mat-elevation-z8">
+            <mat-toolbar-row>
+                <button mat-icon-button class="cart" routerLink="principal">
+          <mat-icon>storefront</mat-icon>
+        </button>
+                <span class="titulo">Mi página web</span>
+                <div _ngcontent-ylo-c50 class="flex-spacer"></div>
+                <span [matBadge]="cantidad" matBadgeOverlap="false">
+          <button mat-icon-button routerLink="carrito" class="cart">
+            <mat-icon>shopping_cart</mat-icon>
+          </button>
+        </span>
+            </mat-toolbar-row>
+        </mat-toolbar>
+        <div class="page-container">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

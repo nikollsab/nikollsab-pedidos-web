@@ -1,0 +1,64 @@
+<mat-card>
+    <h1 mat-card-title style="text-align: center;">Seguimiento de compra</h1>
+    <mat-card-content>
+        <mat-grid-list cols="2" rowHeight="50px" style="margin-bottom: 0em;">
+            <mat-grid-tile>
+                <span>Orden de compra: 25125626</span>
+            </mat-grid-tile>
+            <!--  <mat-grid-tile>
+                <span>25125626</span>
+            </mat-grid-tile> -->
+        </mat-grid-list>
+        <mat-grid-list cols="2" rowHeight="76px" style="margin-bottom: 0em;">
+            <mat-grid-tile>
+                <span>Fecha de compra: 22 mayo 2020</span>
+            </mat-grid-tile>
+            <!-- <mat-grid-tile>
+                <span></span>
+            </mat-grid-tile> -->
+        </mat-grid-list>
+        <mat-grid-list cols="1" rowHeight="76px">
+            <mat-horizontal-stepper labelPosition="bottom" [linear]="true" [selectedIndex]="currentStepMat" #stepper>
+                <mat-step [stepControl]="firstFormGroup" [completed]="isCompletedtepControlOne" [editable]="isEditableStepControlOne">
+                    <form [formGroup]="firstFormGroup">
+                        <ng-template matStepLabel>Recibimos tu pedido</ng-template>
+                    </form>
+                </mat-step>
+                <mat-step [stepControl]="secondFormGroup" [completed]="isCompletedtepControlTwo" [editable]="isEditableStepControlTwo" optional>
+                    <form [formGroup]="secondFormGroup">
+                        <ng-template matStepLabel>Pedido confirmado</ng-template>
+                    </form>
+                </mat-step>
+                <mat-step [stepControl]="threeFormGroup" [completed]="isCompletedtepControlThree" [editable]="isEditableStepControlThree" optional>
+                    <form [formGroup]="threeFormGroup">
+                        <ng-template matStepLabel>Preparando producto</ng-template>
+                    </form>
+                </mat-step>
+                <mat-step [stepControl]="fourFormGroup" [completed]="isCompletedtepControlFour" [editable]="isEditableStepControlFour" optional>
+                    <form [formGroup]="fourFormGroup">
+                        <ng-template matStepLabel>Listo para enviar</ng-template>
+                    </form>
+                </mat-step>
+                <mat-step [completed]="isCompletedtepControlFour" [editable]="isEditableStepControlFour">
+                    <ng-template matStepLabel>Pedido entregado</ng-template>
+                </mat-step>
+            </mat-horizontal-stepper>
+
+        </mat-grid-list>
+        <br>
+        <br>
+        <mat-grid-list cols="1" rowHeight="30px" style="margin-bottom: 0em;">
+            <mat-grid-tile class="alert-success">
+                <span>Información del producto</span>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <mat-grid-list *ngFor="let item of detallepedidos" cols="2" rowHeight="76px" style="margin-bottom: 0em;">
+            <mat-grid-tile>
+                <span>{{item.producto.nombre}}</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span>SKU: {{item.producto.productoId}}  CANTIDAD: {{item.cantidad}}</span>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-card-content>
+</mat-card>

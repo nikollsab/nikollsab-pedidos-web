@@ -1,0 +1,52 @@
+<form [formGroup]="signInForm" (ngSubmit)="sendData()">
+    <div class="div-register">
+        <mat-card class="register">
+            <h1 mat-card-title>Registrate</h1>
+            <mat-card-content>
+                <mat-form-field appearance="outline">
+                    <mat-label>Nombre </mat-label>
+                    <input matInput formControlName="name">
+                    <mat-error *ngIf="signInForm.get('name').hasError('required')">Este campo es obligatorio</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Apellido</mat-label>
+                    <input matInput formControlName="lastName">
+                    <mat-error *ngIf="signInForm.get('lastName').hasError('required')">Este campo es obligatorio</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Celular</mat-label>
+                    <input matInput formControlName="cellphone">
+                    <mat-error *ngIf="signInForm.get('cellphone').hasError('required')">Este campo es obligatorio</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Correo</mat-label>
+                    <input matInput formControlName="email">
+                    <mat-error *ngIf="signInForm.get('email').hasError('required')">Este campo es obligatorio</mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>tipo de usuario</mat-label>
+                    <mat-select formControlName="tipoUsuario">
+                        <mat-option *ngFor="let usuario  of tiposUsuarios" [value]="usuario.code">{{usuario.nombre}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Usuario:</mat-label>
+                    <input matInput formControlName="username">
+                    <mat-error *ngIf="signInForm.get('username').hasError('required')">Este campo es obligatorio</mat-error>
+                </mat-form-field>
+                <br>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Contraseña:</mat-label>
+                    <input matInput formControlName="password">
+                    <mat-error *ngIf="signInForm.get('password').hasError('required')">Este campo es obligatorio</mat-error>
+                </mat-form-field>
+                <br>
+                <button mat-raised-button color="primary" [disabled]="signInForm.invalid">Registrarse</button>
+
+            </mat-card-content>
+
+        </mat-card>
+    </div>
+</form>

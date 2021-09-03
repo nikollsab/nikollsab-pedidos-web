@@ -1,0 +1,73 @@
+<div class="div-register-buy">
+    <form [formGroup]="registerByForm" (ngSubmit)="sendData()" class="register-buy">
+        <mat-card>
+            <h1 mat-card-title>Para realizar tu pedido porfavor brindanos tus datos</h1>
+            <mat-card-content>
+                <mat-grid-list cols="2" rowHeight="76px" style="margin-bottom: 0em;">
+                    <mat-grid-tile>
+                        <mat-form-field appearance="outline" style="width: 100%;margin-top:0px;">
+                            <mat-label>Nombres</mat-label>
+                            <input matInput placeholder="Ingresar nombre" type="text" formControlName="nombre" id="nombre" autofocus required #nombre>
+                        </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <mat-form-field appearance="outline" style="width: 100%;margin-top:0px;">
+                            <mat-label>Apellidos</mat-label>
+                            <input matInput placeholder="Ingresar nombre" type="text" formControlName="apellido" id="apellido" autofocus required #apellido>
+                        </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <mat-form-field appearance="outline" style="width: 100%;margin-top:0px;">
+                            <mat-label>DNI</mat-label>
+                            <input matInput placeholder="Ingresar nombre" type="text" formControlName="documento" id="documento" autofocus required #documento>
+                        </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <mat-form-field appearance="outline" style="width: 100%;margin-top:0px;">
+                            <mat-label>Email</mat-label>
+                            <input matInput placeholder="Ingresar nombre" type="text" formControlName="correo" id="correo" autofocus required #correo>
+                        </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <mat-form-field appearance="outline" style="width: 100%;margin-top:0px;">
+                            <mat-label>Celular</mat-label>
+                            <input matInput placeholder="Ingresar nombre" type="text" formControlName="celular" id="celular" autofocus required #celular>
+                        </mat-form-field>
+                    </mat-grid-tile>
+
+                </mat-grid-list>
+                <h1 mat-card-title>Colocar la dirección de envío</h1>
+                <mat-grid-list cols="2" rowHeight="76px" style="margin-bottom: 0em;">
+                    <mat-grid-tile>
+                        <mat-form-field appearance="outline" style="width: 100%;margin-top:0px;">
+                            <mat-label>Departamento(Obligatorio)</mat-label>
+                            <input matInput placeholder="Ingresar nombre" type="text" formControlName="detarmento" id="detarmento" autofocus required #detarmento>
+                        </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <mat-form-field appearance="outline" style="width: 100%;margin-top:0px;">
+                            <mat-label>Provincia(Obligatorio)</mat-label>
+                            <input matInput placeholder="Ingresar nombre" type="text" formControlName="provincia" id="provincia" autofocus required #provincia>
+                        </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <mat-form-field appearance="outline" style="width: 100%;margin-top:0px;">
+                            <mat-label>Distrito(Obligatorio)</mat-label>
+                            <input matInput placeholder="Ingresar nombre" type="text" formControlName="distrito" id="distrito" autofocus required #distrito>
+                        </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <mat-form-field appearance="outline" style="width: 100%;margin-top:0px;">
+                            <mat-label>Dirección(Obligatorio)</mat-label>
+                            <input matInput placeholder="Ingresar nombre" type="text" formControlName="direccion" id="direccion" autofocus required #direccion>
+                        </mat-form-field>
+                    </mat-grid-tile>
+                </mat-grid-list>
+
+                <div class="div-register-buy">
+                    <button mat-raised-button color="primary">Finalizar Compra</button>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </form>
+</div>
