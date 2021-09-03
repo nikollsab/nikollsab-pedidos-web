@@ -14,12 +14,17 @@
                 <mat-error *ngIf="signInForm.get('password').hasError('required')">Este campo es obligatorio</mat-error>
             </mat-form-field>
             <br>
-            <button mat-raised-button color="primary">Ingresar</button>
+            <button mat-raised-button color="warn">Ingresar</button>
             <button mat-button color="warn" [routerLink]="['/registro']" routerLinkActive="activo">Registrarse</button>
         </mat-card-content>
-        <!--    <mat-card-actions>
-            <button type="button" mat-button>Registrarse</button>
-            <button mat-button [disabled]="signInForm.invalid">Ingresar</button>
-        </mat-card-actions> -->
     </mat-card>
+
+    <br>
+    <button mat-raised-button color="primary" routerLink="/principal"> 
+        <span class="material-icons">
+            home
+        </span>
+        &nbsp;
+        Ir a página principal</button>
+        
 </form>
