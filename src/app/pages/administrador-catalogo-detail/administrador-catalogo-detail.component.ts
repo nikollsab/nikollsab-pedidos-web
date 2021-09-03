@@ -16,6 +16,7 @@ export class AdministradorCatalogoDetailComponent implements OnInit {
   pedido: Pedidos;
   estado: IEstado;
   isLoading: boolean = true;
+  mostrarError: boolean = false;
 
   constructor(
     private servicio: ServicioService,
@@ -48,7 +49,10 @@ export class AdministradorCatalogoDetailComponent implements OnInit {
       .subscribe(
         async data => {
           this.estado = data;
-        }, () => { },
+        }, () => {  
+          this.isLoading = true;
+          this.mostrarError = true;
+        },
         () => {
           this.isLoading = false;
         }

@@ -1,6 +1,24 @@
+<div class="back-arrow">
+    
+    <button mat-button color="warn" routerLink="/principal2/administrador">
+        <span class="material-icons">
+            west
+        </span>
+        &nbsp;
+        Regresar</button>
+</div>
+
+<div *ngIf="mostrarError" class="error-text">
+    <div>
+        <span class="material-icons icono">
+            sentiment_very_dissatisfied
+        </span>
+    </div>
+    <h4> Error al cargar la solicitud </h4>
+</div>
 
 <div *ngIf="isLoading" class="spinner">
-    <mat-spinner ></mat-spinner>
+    <mat-spinner></mat-spinner>
 </div>
 
 <mat-card *ngIf="!isLoading" class="example-card">
@@ -64,13 +82,12 @@
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
     </mat-card-content>
-    <mat-card-actions class="card-flex">
-        <button mat-button color="warn" routerLink="/principal2/administrador"> 
-            <span class="material-icons">
-                west
-            </span>
-            &nbsp;
-            Regresar</button>
-        <button mat-button color="primary" (click)="promoverEstadoPedido()">Promover a {{estado.nombre}}</button>
-    </mat-card-actions>
 </mat-card>
+
+<br>
+
+<div class="card-flex" *ngIf="!isLoading">
+    <button mat-raised-button color="primary" (click)="promoverEstadoPedido()">Promover a {{estado.nombre}}</button>
+</div>
+
+<br>
