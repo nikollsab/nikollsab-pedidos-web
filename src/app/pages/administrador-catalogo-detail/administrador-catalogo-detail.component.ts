@@ -15,6 +15,8 @@ export class AdministradorCatalogoDetailComponent implements OnInit {
   pedidoId: string;
   pedido: Pedidos;
   estado: IEstado;
+  isLoading: boolean = true;
+
   constructor(
     private servicio: ServicioService,
     private router: ActivatedRoute) {
@@ -29,7 +31,6 @@ export class AdministradorCatalogoDetailComponent implements OnInit {
         async data => {
           console.log(data);
           this.dataSource = [...data];
-          console.log(data, 'Pedido por id');
         }
       );
   }
@@ -37,10 +38,8 @@ export class AdministradorCatalogoDetailComponent implements OnInit {
     this.servicio.getPedidoId(this.pedidoId)
       .subscribe(
         async data => {
-          console.log(data);
           this.pedido = data;
-          this.obtenerEstado(data.estado.estadoId)
-
+          this.obtenerEstado(data.estado.estadoId);
         }
       );
   }
@@ -48,15 +47,17 @@ export class AdministradorCatalogoDetailComponent implements OnInit {
     this.servicio.getEstadoId(estadoId + 1)
       .subscribe(
         async data => {
-          console.log(data);
           this.estado = data;
-        });
+        }, () => { },
+        () => {
+          this.isLoading = false;
+        }
+      );
   }
   promoverEstadoPedido() {
     this.servicio.promoverEstadoPedido(this.pedidoId)
       .subscribe(
         async data => {
-          console.log(data);
           this.obtenerPedido();
         }
       );

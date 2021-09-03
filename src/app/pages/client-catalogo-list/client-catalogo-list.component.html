@@ -1,29 +1,38 @@
-<table mat-table [dataSource]="dataSource">
+<div *ngIf="isLoading" class="spinner">
+    <mat-spinner></mat-spinner>
+</div>
 
-    <!-- Position Column -->
-    <ng-container matColumnDef="nombre">
-        <th mat-header-cell *matHeaderCellDef> Nombre </th>
-        <td mat-cell *matCellDef="let element"> {{element.nombre | uppercase}} </td>
-    </ng-container>
+<div *ngIf="!isLoading">
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="descripcion">
-        <th mat-header-cell *matHeaderCellDef> Descripcion </th>
-        <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
-    </ng-container>
+    <table mat-table [dataSource]="dataSource">
 
-    <!-- Weight Column -->
-    <ng-container matColumnDef="precio">
-        <th mat-header-cell *matHeaderCellDef> Precio </th>
-        <td mat-cell *matCellDef="let element"> {{element.precio | number: '3.2-2'}} </td>
-    </ng-container>
+        <!-- Position Column -->
+        <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef> Nombre </th>
+            <td mat-cell *matCellDef="let element"> {{element.nombre | uppercase}} </td>
+        </ng-container>
 
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="accion">
-        <th mat-header-cell *matHeaderCellDef> Acción </th>
-        <td mat-cell *matCellDef="let element"> <button mat-raised-button color="accent" (click)="agregarCarrito(element)">Agregar al carrito</button></td>
-    </ng-container>
+        <!-- Name Column -->
+        <ng-container matColumnDef="descripcion">
+            <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+            <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+        </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="columndefs"></tr>
-    <tr mat-row *matRowDef="let row; columns: columndefs;"></tr>
-</table>
+        <!-- Weight Column -->
+        <ng-container matColumnDef="precio">
+            <th mat-header-cell *matHeaderCellDef> Precio </th>
+            <td mat-cell *matCellDef="let element"> {{element.precio | number: '3.2-2'}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="accion">
+            <th mat-header-cell *matHeaderCellDef> Acción </th>
+            <td mat-cell *matCellDef="let element"> <button mat-raised-button color="accent"
+                    (click)="agregarCarrito(element)">Agregar al carrito</button></td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columndefs"></tr>
+        <tr mat-row *matRowDef="let row; columns: columndefs;"></tr>
+    </table>
+
+</div>

@@ -41,7 +41,7 @@ export class AdministradorCatalogoListComponent implements OnInit {
         element
       }
     };
-    this.router.navigate(['/detalle-administrador/' + element.pedidoId], );
+    this.router.navigate(['/principal2/detalle/' + element.pedidoId], );
 
   }
 

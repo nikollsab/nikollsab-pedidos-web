@@ -12,6 +12,8 @@ export class ClientCatalogoListComponent implements OnInit {
   columndefs: any[] = ['nombre', 'descripcion', 'precio', 'accion'];
   dataSource: Productos[] = [];
   carrito: any[] = [];
+  isLoading:boolean = true;
+
   constructor(
     private servicio: ServicioService
   ) { }
@@ -21,6 +23,9 @@ export class ClientCatalogoListComponent implements OnInit {
       .subscribe(
         async data => {
           this.dataSource = data;
+        }, () => { },
+        () => {
+          this.isLoading = false;
         }
       );
   }

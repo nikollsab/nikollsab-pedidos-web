@@ -40,7 +40,7 @@ const routes: Routes = [
   { path: 'principal2', component: Principal2Component,  canActivate: [AuthGuard],  children: [
     { path: '', redirectTo: 'administrador', pathMatch: 'full' },
     { path: 'administrador', component: AdministradorCatalogoWiewComponent },
-    { path: 'detalle-administrador/:id', component: AdministradorCatalogoDetailComponent },
+    { path: 'detalle/:id', component: AdministradorCatalogoDetailComponent },
   ]}
 ];
 
