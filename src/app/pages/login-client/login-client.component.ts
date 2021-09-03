@@ -8,7 +8,12 @@ import { NavigationExtras, Router } from '@angular/router';
   styleUrls: ['./login-client.component.scss']
 })
 export class LoginClientComponent implements OnInit {
-valor: any
+
+
+  valor: any;
+  isDisabled: boolean = false;
+
+
   constructor(private router: Router) { }
   signInForm = new FormGroup({
     username: new FormControl('', [Validators.required]),
@@ -17,11 +22,12 @@ valor: any
 
  
   ngOnInit(): void {
+
   }
   
   
   search(){
-    const string = this.signInForm.get('username').value;
+    let string = this.signInForm.get('username').value;
     console.log(string);
     this.router.navigate(['/order-status/'+ string]);
 

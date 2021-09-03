@@ -1,8 +1,19 @@
+
+.contenedor {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .flex-card {
     display: flex;
     justify-content: space-around;
     mat-card   {
         text-align: center;
+        margin: 25px;
     }
 }
 
@@ -10,8 +21,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #757575;
 }
 
 .titulo, .material-icons {
     font-size: 40px;
 }
+

@@ -16,7 +16,7 @@
                     <mat-error *ngIf="signInForm.get('username').hasError('required')">Este campo es obligatorio</mat-error>
                 </mat-form-field>
                 <br>
-                <button mat-raised-button color="warn" (click)="search()" >Buscar</button>
+                <button mat-raised-button color="warn" id="btn-buscar" (click)="search()" [disabled]="!this.signInForm.valid">Buscar</button>
     
             </mat-card-content>
         </mat-card>
