@@ -15,9 +15,14 @@ export class PagesComponent implements OnInit {
   obtenerCarrito(){
     this.cantidad = 0;
     const carrito = JSON.parse(localStorage.getItem('carrito'));
-    carrito.forEach(element => {
-      this.cantidad += element.cantidad;
-    });
+
+    if(carrito != null){
+      carrito.forEach(element => {
+        this.cantidad += element.cantidad;
+      });
+    }
+ 
+
   }
   ngOnInit(): void {
 

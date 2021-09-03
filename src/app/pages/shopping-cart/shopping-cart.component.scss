@@ -28,3 +28,11 @@ mat-card {
 .container {
     padding: 30px;
 }
+
+.flex-card {
+    display: flex;
+    justify-content: space-around
+}
+h2 {
+    font-weight: bold;
+}

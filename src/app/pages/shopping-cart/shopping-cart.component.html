@@ -1,6 +1,7 @@
 <!--Tabla de productos-->
+<br>
 <mat-card>
-    <table mat-table [dataSource]="carrito" class="mat-elevation-z8">
+    <table mat-table [dataSource]="carrito">
 
         <ng-container matColumnDef="nombre">
             <th mat-header-cell *matHeaderCellDef> Nombre </th>
@@ -30,22 +31,16 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
     </table>
-    <div class="container">
-        <table>
-            <thead>
-                <tr>
-                    <td>
-                        TOTAL
-                    </td>
-                    <td>
-                        S./{{total}}
-                    </td>
-                </tr>
-            </thead>
-        </table>
-    </div>
 
+    <br>
+
+    <div class="flex-card">
+        <h2>TOTAL</h2>
+        <h2>S/. {{total}}</h2>
+    </div>
 </mat-card>
+
+<br>
 
 
 
