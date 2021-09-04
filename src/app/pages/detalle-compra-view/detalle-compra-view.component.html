@@ -1,5 +1,15 @@
+<div *ngIf="isSuccess" class="succes-text">
+    <div>
+        <span class="material-icons icono">
+            sentiment_very_satisfied
+        </span>
+    </div>
+    <h4> ¡Enhorabuena! </h4>
+    <h6>Se registró su compra satisfactoriamente</h6>
+</div>
+
 <mat-card>
-    <table mat-table [dataSource]="carrito" class="mat-elevation-z8">
+    <table mat-table [dataSource]="carrito">
 
         <ng-container matColumnDef="nombre">
             <th mat-header-cell *matHeaderCellDef> Nombre </th>
@@ -18,35 +28,27 @@
 
         <ng-container matColumnDef="precio">
             <th mat-header-cell *matHeaderCellDef>Precio</th>
-            <td mat-cell *matCellDef="let element"> <span>{{element.precio}}</span></td>
+            <td mat-cell *matCellDef="let element"> <span>{{element.precio |  currency:'PEN':'symbol-narrow'}}</span></td>
         </ng-container>
 
         <ng-container matColumnDef="subtotal">
             <th mat-header-cell *matHeaderCellDef>Subtotal</th>
-            <td mat-cell *matCellDef="let element"> <span>{{element.precio * element.cantidad}}</span></td>
+            <td mat-cell *matCellDef="let element"> <span>{{element.precio * element.cantidad | currency:'PEN':'symbol-narrow'}}</span></td>
         </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
     </table>
-    <div class="container">
-        <table>
-            <thead>
-                <tr>
-                    <td>
-                        TOTAL
-                    </td>
-                    <td>
-                        S./{{total}}
-                    </td>
-                </tr>
-            </thead>
-        </table>
+    <br>
+
+    <div class="flex-card">
+        <h2>TOTAL</h2>
+        <h2>{{total | currency:'PEN':'symbol-narrow'}}</h2>
     </div>
 
 </mat-card>
 
 
 <div id="regresar-compra">
-    <button mat-button color="accent" routerLink="/catalogo"><mat-icon>keyboard_backspace</mat-icon>Regresar al catalogo</button>
+    <button mat-button color="warn" routerLink="/catalogo"><mat-icon>keyboard_backspace</mat-icon> &nbsp; Regresar al catalogo</button>
 </div>

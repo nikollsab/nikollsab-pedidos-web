@@ -10,6 +10,12 @@ import { MatCardModule } from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { AuthGuard } from './services/auth.guard';
 
+import localeEs from '@angular/common/locales/es-PE';
+import { registerLocaleData } from '@angular/common';
+import { LOCALE_ID } from '@angular/core';
+registerLocaleData(localeEs );
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -24,7 +30,10 @@ import { AuthGuard } from './services/auth.guard';
     MatCardModule,
     MatButtonModule,
   ],
-  providers: [ AuthGuard, ],
+  providers: [
+    AuthGuard,
+    { provide: LOCALE_ID, useValue: 'es-PE'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

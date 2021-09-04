@@ -14,10 +14,13 @@
                 <mat-error *ngIf="signInForm.get('password').hasError('required')">Este campo es obligatorio</mat-error>
             </mat-form-field>
             <br>
-            <button mat-raised-button color="warn">Ingresar</button>
+            <button mat-raised-button color="warn" [disabled]="signInForm.invalid">Ingresar</button>
             <button mat-button color="warn" [routerLink]="['/registro']" routerLinkActive="activo">Registrarse</button>
         </mat-card-content>
     </mat-card>
+    <span class="txt-error" *ngIf="isInvalid"> *Credenciales inválidas </span>
+
+    <br>
 
     <br>
     <button mat-raised-button color="primary" routerLink="/principal"> 

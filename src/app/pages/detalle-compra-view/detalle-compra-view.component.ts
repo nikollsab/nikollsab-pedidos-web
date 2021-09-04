@@ -12,6 +12,7 @@ export class DetalleCompraViewComponent implements OnInit {
   displayedColumns: string[] = [ 'nombre','descripcion','cantidad','precio','subtotal'];
   carrito: Carrito[] = [];
   total: number = 0;
+  isSuccess: boolean = true;
 
   constructor( ) {
     this.carrito = JSON.parse(localStorage.getItem('carrito'));
@@ -19,10 +20,10 @@ export class DetalleCompraViewComponent implements OnInit {
     this.carrito.forEach(element => {
       this.total += element.precio + element.cantidad;
     });
-    console.log(this.carrito);
    }
 
   ngOnInit(): void {
+    localStorage.clear();
   }
 
 }

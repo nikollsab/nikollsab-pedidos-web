@@ -23,6 +23,9 @@ export class RegisterBuyComponent implements OnInit {
     direccion: new FormControl('', [Validators.required])
   });
 
+  isError: boolean = false;
+  showTable: boolean =  true;
+
   constructor(private registerByService: ServicioService, private router: Router) { }
 
   ngOnInit(): void {
@@ -55,13 +58,16 @@ export class RegisterBuyComponent implements OnInit {
       this.registerByService.register(obj).subscribe(
         async data => {
           if (data != null) {
-              localStorage.clear();
               this.router.navigate(['/detalle-compra']);
           }
         },
         err => {
-          console.log(err);
-          /* this.openDialogInfo('Registro fallido  !', 'Ocurrió un error. Intentelo mas tarde', 'error'); */
+          this.isError = true;
+          this.showTable = false;
+        }, 
+        ()  => {
+          this.showTable = false;
+          // localStorage.clear();
         }
       );  
     }

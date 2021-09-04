@@ -13,3 +13,16 @@
 #register-buy-button {
     text-align: center;
 }
+
+.error-text , .succes-text {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.icono {
+    font-size: 60px;
+}

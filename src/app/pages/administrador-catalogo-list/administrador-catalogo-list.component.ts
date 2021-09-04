@@ -14,6 +14,7 @@ import { Router, NavigationExtras } from '@angular/router';
 export class AdministradorCatalogoListComponent implements OnInit {
   displayedColumns: string[] = ['codPedido', 'cliente', 'estado', 'acciones'];
   dataSource: Pedidos[] = [];
+  isLoading:boolean = true;
 
   constructor(
     private servicio: ServicioService,
@@ -29,10 +30,12 @@ export class AdministradorCatalogoListComponent implements OnInit {
     .subscribe(
       async data => {
         this.dataSource = data;
+      }, () => { },
+      () => {
+        this.isLoading = false;
       }
     );
 
-    console.log('Consumiendo servicio de pedido', this.servicio);
   }
 
   verDetalle(element) {

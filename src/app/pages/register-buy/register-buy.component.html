@@ -1,5 +1,17 @@
 <br>
-<div class="div-register-buy">
+
+<div *ngIf="isError" class="error-text">
+    <div>
+        <span class="material-icons icono">
+            sentiment_very_dissatisfied
+        </span>
+    </div>
+    <h4> Lo sentimos, ocurrió un error al procesar su solicitud. </h4>
+    <h6>Intente nuevamente.</h6>
+</div>
+
+
+<div class="div-register-buy" *ngIf="showTable">
     <form [formGroup]="registerByForm" (ngSubmit)="sendData()" class="register-buy">
         <mat-card>
             <h1 mat-card-title>Para realizar tu pedido porfavor brindanos tus datos</h1>
